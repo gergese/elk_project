@@ -1,0 +1,496 @@
+﻿{
+  "check_list": [
+    {
+      "code": "W-01",
+      "title": "Administrator 계정 이름 바꾸기",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-02",
+      "title": "Guest 계정 상태",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-03",
+      "title": "불필요한 계정 제거",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-04",
+      "title": "계정 잠금 임계값 설정",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-05",
+      "title": "해독 가능한 암호화를 사용하여 암호 저장 해제",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-06",
+      "title": "관리자 그룹에 최소한의 사용자 포함",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-07",
+      "title": "공유 권한 및 사용자 그룹 설정",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-08",
+      "title": "하드디스크 기본 공유 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-09",
+      "title": "불필요한 서비스 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-10",
+      "title": "IIS 서비스 구동 점검",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-11",
+      "title": "디렉토리 리스팅 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-12",
+      "title": "IIS CGI 실행 제한 양호",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-13",
+      "title": "IIS 상위 디렉토리 접근 금지",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-14",
+      "title": "IIS 불필요한 파일 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-15",
+      "title": "웹 프로세스 권한 제한",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-16",
+      "title": "IIS 링크 사용 금지",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-17",
+      "title": "IIS 파일 업로드 및 다운로드 제한",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-18",
+      "title": "IIS DB 연결 취약점 점검",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-19",
+      "title": "IIS 가상 디렉토리 삭제",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-20",
+      "title": "IIS 데이터 파일 ACL 적용",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-21",
+      "title": "IIS 미사용 스크립트 매핑 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-22",
+      "title": "IIS Exec 명령어 쉘 호출 진단",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-23",
+      "title": "IIS WebDAV 비활성화 관리",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-24",
+      "title": "NetBIOS 바인딩 서비스 구동 점검",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-25",
+      "title": "FTP 서비스 구동 점검",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-26",
+      "title": "FTP 디렉토리 접근권한 설정",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-27",
+      "title": "Anonymous FTP 금지",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-28",
+      "title": "FTP 접근 제어 설정",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-29",
+      "title": "DNS Zone Transfer 설정",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-30",
+      "title": "RDS(Remote Data Services) 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-31",
+      "title": "최신 서비스 팩 적용",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-32",
+      "title": "최신 HOT FIX 적용",
+      "root_title": "패치 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-33",
+      "title": "백신 프로그램 업데이트",
+      "root_title": "패치 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-34",
+      "title": "로그의 정기적 검토 및 보고",
+      "root_title": "로그 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-35",
+      "title": "원격으로 액세스 할 수 있는 레지스트리 경로",
+      "root_title": "로그 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-36",
+      "title": "백신 프로그램 설치",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-37",
+      "title": "SAM 파일 접근 통제 설정",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-38",
+      "title": "화면보호기 설정",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-39",
+      "title": "로그온 하지 않고 시스템 종료 허용 해제",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-40",
+      "title": "원격 시스템에서 강제로 시스템 종료",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-41",
+      "title": "보안 감사를 로그할 수 없는 경우 즉시 시스템 종료 해제",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-42",
+      "title": "SAM 계정과 공유의 익명 열거 허용 안 함",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-43",
+      "title": "Autologin 기능 제어",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-44",
+      "title": "이동식 미디어 포맷 및 꺼내기 허용",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-45",
+      "title": "디스크 볼륨 암호화 설정",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-46",
+      "title": "Everyone 사용권한을 익명사용자에 적용 해제",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-47",
+      "title": "계정 잠금 기간 설정",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-48",
+      "title": "패스워드 복잡성 설정",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-49",
+      "title": "패스워드 최소 암호 길이",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-50",
+      "title": "패스워드 최대 사용 기간",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-51",
+      "title": "패스워드 최소 사용 기간",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-52",
+      "title": "마지막 사용자 이름 표시 안 함",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-53",
+      "title": "로컬 로그온 허용",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-54",
+      "title": "익명 SID/ 이름 변환 허용 해제",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-55",
+      "title": "최근 암호 기억",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-56",
+      "title": "콘솔 로그온 시 로컬 계정에서 빈 암호 사용 제한",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-57",
+      "title": "원격터미널 접속 가능한 사용자 그룹 제한",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-58",
+      "title": "터미널 서비스 암호화 수준 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-59",
+      "title": "IIS 웹 서비스 정보 숨김",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-60",
+      "title": "SNMP 서비스 구동 점검",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-61",
+      "title": "SNMP 서비스 커뮤니티 스트링의 복잡성 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-62",
+      "title": "SNMP Access control 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-63",
+      "title": "DNS 서비스 구동 점검",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-64",
+      "title": "HTTP/FTP/SNMP 배너 차단",
+      "root_title": "서비스 관리",
+      "importance": "하"
+    },
+    {
+      "code": "W-65",
+      "title": "Telnet 보안 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-66",
+      "title": "불필요한 ODBC / OLE-DB 데이터 소스와 드라이브 제거",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-67",
+      "title": "원격 터미널 접속 타임아웃 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-68",
+      "title": "원격 터미널 접속 타임아웃 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-69",
+      "title": "정책에 따른 시스템 로깅설정",
+      "root_title": "패치 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-70",
+      "title": "이벤트 로그 관리 설정",
+      "root_title": "로그 관리",
+      "importance": "하"
+    },
+    {
+      "code": "W-71",
+      "title": "원격에서 이벤트 로그 파일 접근 차단",
+      "root_title": "로그 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-72",
+      "title": "Dos 공격 방어 레지스트리 설정",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-73",
+      "title": "사용자가 프린터 드라이버를 설치할 수 없게 함",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "W-74",
+      "title": "세션 연결을 중단하기 전에 필요한 유휴시간",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-75",
+      "title": "경고 메세지 설정",
+      "root_title": "보안 관리",
+      "importance": "하"
+    },
+    {
+      "code": "W-76",
+      "title": "사용자별 홈 디렉토리 권한 설정",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-77",
+      "title": "LAN Manager 인증 수준",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-78",
+      "title": "보안 채널 데이터 디지털 암호화 또는 서명",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-79",
+      "title": "파일 및 디렉토리 보호",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-80",
+      "title": "컴퓨터 계정 암호 최대 사용 기간",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-81",
+      "title": "시작프로그램 목록 분석",
+      "root_title": "보안 관리",
+      "importance": "중"
+    },
+    {
+      "code": "W-82",
+      "title": "Windows 인증 모드 사용",
+      "root_title": "보안 관리",
+      "importance": "중"
+    }
+  ]
+}
