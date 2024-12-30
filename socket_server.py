@@ -113,11 +113,11 @@ def shutdown_server():
         except Exception as e:
             print(f"{addr} (ID: {client_id}) 연결 종료 오류: {e}")
 
-def send_command_to_execute(client_index, file_name):
+def send_command_to_execute(client_index, command_execute):
     if 0 <= client_index < len(clients):
         conn, addr, client_id = clients[client_index]
         try:
-            command = f"EXECUTE {file_name}"
+            command = f"EXECUTE {command_execute}"
             conn.sendall(command.encode())  # 클라이언트로 명령 전송
             print(f"명령 '{command}'를 {addr} (ID: {client_id})로 전송했습니다.")
         except Exception as e:
@@ -163,8 +163,8 @@ if __name__ == "__main__":
                 show_connected_clients()
                 client_index = int(input(f"\n파일을 실행할 클라이언트를 선택하세요: ")) - 1
                 
-                file_name = input("실행할 명령어를 입력하세요: ").strip()
-                send_command_to_execute(client_index, file_name)
+                command_execute = input("실행할 명령어를 입력하세요: ").strip()
+                send_command_to_execute(client_index, command_execute)
 
             elif choice == '4':
                 print("서버를 종료합니다.")
