@@ -167,7 +167,7 @@ foreach ($name_item in $FTP_Site_List) {
 }
 
 $securityTemplatePath = ".\user_rights.inf"
-$databaasePath = ".\test.sdb"
+$databasePath = ".\test.sdb"
 
 # 전역 변수 선언
 $global:data_json = @()
