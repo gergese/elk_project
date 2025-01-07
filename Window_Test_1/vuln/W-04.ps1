@@ -1,4 +1,4 @@
-﻿###############################################
+###############################################
 
 ########### 4. 계정 잠금 임계값 설정 ###########
 
@@ -10,7 +10,7 @@ $importance = $checklist.check_list[3].importance
 $tempStr = Get-Content user_rights.inf | Select-String "LockoutBadCount"
 $tempStr = Out-String -InputObject $tempStr
 $tempStr = $tempStr.Split('=')
-$count = $tempStr[-1].Trim()
+$count = [int]($tempStr[-1].Trim())
 
 
 if($count)
