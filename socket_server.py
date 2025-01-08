@@ -3,7 +3,6 @@ import zipfile
 import os
 import threading
 import atexit  # atexit 모듈 추가
-import time
 
 clients = []  # 연결된 클라이언트 목록
 server_running = True  # 서버 상태 확인용 변수
@@ -21,13 +20,13 @@ def send_file(conn, file_path):
         print(file_size)
         conn.sendall(b"FILE_TRANSFER " + str(file_size).encode())  # 파일 전송 명령 전송
 
-        # 명령어 전송 후 지연
-        time.sleep(1)  # 1초 지연 (필요에 따라 조정 가능)
-        
-        with open(file_path, 'rb') as f:
-            data = f.read()
-            conn.sendall(data)
-            print("파일 전송 성공.")
+        recv = conn.recv(1024).decode('utf-8')
+        if recv == 'OK':
+            with open(file_path, 'rb') as f:
+                data = f.read()
+                conn.sendall(data)
+                print("파일 전송 성공.")
+
     except Exception as e:
         print(f"파일 전송 오류: {e}")
 
@@ -120,6 +119,25 @@ def send_command_to_execute(client_index, command_execute):
             command = f"EXECUTE {command_execute}"
             conn.sendall(command.encode())  # 클라이언트로 명령 전송
             print(f"명령 '{command}'를 {addr} (ID: {client_id})로 전송했습니다.")
+
+            # 데이터 크기 수신
+            data_length = int(conn.recv(1024).decode('utf-8'))  # 데이터 크기 수신
+            conn.sendall(b"1")  # 수신 확인 신호 전송
+
+            # 데이터 수신
+            received_data = b""
+            while len(received_data) < data_length:
+                chunk = conn.recv(4096)
+                if not chunk:
+                    break
+                received_data += chunk
+
+            # 수신 완료 후 출력
+            if received_data:
+                print(f"\n실행 결과:\n{received_data.decode('utf-8')}")
+            else:
+                print(f"\n실행 결과 존재하지 않음")
+
         except Exception as e:
             print(f"명령 전송 오류: {e}")
     else:

