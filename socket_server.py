@@ -3,6 +3,7 @@ import zipfile
 import os
 import threading
 import atexit  # atexit 모듈 추가
+import time
 
 clients = []  # 연결된 클라이언트 목록
 server_running = True  # 서버 상태 확인용 변수
@@ -47,8 +48,8 @@ def handle_client(conn, addr):
                 break
             elif command.startswith("EXECUTE"):
                 print(f"Received command from {addr}: {command}")
-            else:
-                print(f"Unknown command from {addr}: {command}")
+            # else:
+            #     print(f"Unknown command from {addr}: {command}")
         except Exception as e:
             print(f"Error with client {addr}: {e}")
             break
@@ -120,8 +121,9 @@ def send_command_to_execute(client_index, command_execute):
             conn.sendall(command.encode())  # 클라이언트로 명령 전송
             print(f"명령 '{command}'를 {addr} (ID: {client_id})로 전송했습니다.")
 
-            # 데이터 크기 수신
-            data_length = int(conn.recv(1024).decode('utf-8'))  # 데이터 크기 수신
+            data_length = conn.recv(1024).decode('utf-8')  # 데이터 크기 수신
+            data_length = int(data_length)
+            time.sleep(1)
             conn.sendall(b"1")  # 수신 확인 신호 전송
 
             # 데이터 수신

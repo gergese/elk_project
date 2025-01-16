@@ -68,8 +68,6 @@ def start_client():
                     parts = command.split()
                     data = parts[0]  # FILE_TRANSFER 명령어
                     file_size = int(parts[1])  # 파일 크기
-
-                if data == "FILE_TRANSFER":
                     client_socket.sendall(b"OK")
                     time.sleep(1)
                     # 파일 전송 모드로 전환
@@ -85,10 +83,13 @@ def start_client():
                     # 명령어 결과 전송
                     if output:
                         # 데이터 크기 전송
+                        time.sleep(1)
                         data = output.encode('utf-8')
                         client_socket.sendall(str(len(data)).encode('utf-8'))  # 데이터 길이를 먼저 전송
-                        client_socket.recv(1)  # 서버로부터 수신 확인
-                        client_socket.sendall(data)  # 실제 데이터 전송
+                        recv1 = client_socket.recv(4)  # 서버로부터 수신 확인
+
+                        if(recv1.decode('utf-8') == '1'):
+                            client_socket.sendall(data)  # 실제 데이터 전송
                     else:
                         client_socket.sendall(b"0")  # 데이터 크기 0 전송
 

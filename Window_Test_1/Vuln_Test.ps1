@@ -355,10 +355,10 @@ if (Test-Path .\user_rights.inf) {
     Remove-Item .\user_rights.inf
 }
 
-if (Test-Path .\secedit.sdb) {
-    Remove-Item .\secedit.sdb
+if (Test-Path .\test.sdb) {
+    Remove-Item .\test.sdb
 }
 
-if (Test-Path .\secedit.jfm) {
-    Remove-Item .\secedit.jfm
+if (Test-Path .\test.jfm) {
+    Remove-Item .\test.jfm
 }
