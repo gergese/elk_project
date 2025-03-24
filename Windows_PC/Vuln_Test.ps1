@@ -112,6 +112,9 @@ $checklist = Get-Content -Path ".\window_checklist_PC.json" | Out-String | Conve
 
 $hardware_uuid = (Get-WmiObject -Class Win32_ComputerSystemProduct).UUID
 
+$os_info = Get-CimInstance -ClassName Win32_OperatingSystem
+$os_name = $os_info.Caption
+
 # json 형식
 function Add-Data {
     param (
@@ -133,6 +136,7 @@ function Add-Data {
         결과   = $result
         hwid = $hardware_uuid
         점검자  = "송재민"
+        점검대상 = $os_name
     }
 
     # 요청을 보낼 URL 설정 (예: 로컬호스트 5000번 포트)
