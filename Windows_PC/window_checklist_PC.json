@@ -1,0 +1,118 @@
+﻿{
+  "check_list": [
+    {
+      "code": "PC-01",
+      "title": "패스워드의 주기적 변경",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-02",
+      "title": "패스워드 정책이 해당 기관의 보안 정책에 적합하게 설정",
+      "root_title": "계정 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-03",
+      "title": "공유 폴더 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-04",
+      "title": "항목의 불필요한 서비스 제거",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-05",
+      "title": "Windows Messenger(MSN, .NET 메신저 등)와 같은 상용 메신저의 사용 금지",
+      "root_title": "서비스 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-06",
+      "title": "HOT FIX 등 최신 보안패치 적용",
+      "root_title": "패치 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-07",
+      "title": "최신 서비스팩 적용",
+      "root_title": "패치 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-08",
+      "title": "MS-Office, 한글, 어도비 아크로뱃 등의 응용 프로그램에 대한 최신 보안패치 및 벤더 권고사항 적용",
+      "root_title": "패치 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-09",
+      "title": "바이러스 백신 프로그램 설치 및 주기적 업데이트",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-10",
+      "title": "바이러스 백신 프로그램에서 제공하는 실시간 감시 기능 활성화",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-11",
+      "title": "OS에서 제공하는 침입차단 기능 활성화",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-12",
+      "title": "화면보호기 대기 시간 설정 및 재시작 시 암호 보호 설정",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-13",
+      "title": "CD, DVD, USB 메모리 등과 같은 미디어의 자동실행 방지등 이동식 미디어에 대한 보안대책 수립",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-14",
+      "title": "PC 내부의 미사용(3개월) ActiveX 제거",
+      "root_title": "보안 관리",
+      "importance": "상"
+    },
+    {
+      "code": "PC-15",
+      "title": "복구 콘솔에서 자동 로그온을 금지하도록 설정",
+      "root_title": "계정 관리",
+      "importance": "중"
+    },
+    {
+      "code": "PC-16",
+      "title": "파일 시스템이 NTFS 포맷으로 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "PC-17",
+      "title": "대상 시스템이 Windows 서버를 제외한 다른 OS로 멀티 부팅이 가능하지 않도록 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "PC-18",
+      "title": "브라우저 종료 시 임시 인터넷 파일 폴더의 내용을 삭제하도록 설정",
+      "root_title": "서비스 관리",
+      "importance": "중"
+    },
+    {
+      "code": "PC-19",
+      "title": "원격 지원을 금지하도록 정책이 설정",
+      "root_title": "보안 관리",
+      "importance": "중"
+    }
+  ]
+}
