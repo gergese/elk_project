@@ -1,20 +1,88 @@
-# Window_Test_1
+# 프로젝트 목표
+- 가상의 Windows Server(Windows 2022) 구축
+- 주요정보통신기반시설 Windows 서버 취약점 분석·평가 항목을 바탕으로 진단 스크립트 작성 및 취약점 진단 수행
+- 해당 진단 결과로 취약점 분석·평가 보고서 작성
+
+<br/>
+
+---
+
+# 프로젝트 수행기간
+- 2024.09.30 ~ 2024.10.25
+<br/>
+
+---
+
+# 프로젝트 수행인원
+- 5명
+
+<br/>
+
+---
+
+# 프로젝트 수행역할
+- 수행계획서 작성
+- Windows 서버 진단 스크립트 작성
+- 원격 관리 프로그램 개발
+- 취약점 분석 및 평가 보고서 작성
+<br/>
+
+---
+
+# 주요 산출물
+
+### 서버 진단 스크립트
+
+**Window_Test_1**
+
 Window Server 진단 및 조치 스크립트 파일  
-window_checklist.json : 진단항목 상세 정보  
-Vuln_Test.ps1 : 자동 진단 및 조치 실행 런처  
-vuln : 진단 스크립트 파일  
-action : 조치 스크립트 파일
+> window_checklist.json : 진단항목 상세 정보  
+> Vuln_Test.ps1 : 자동 진단 및 조치 실행 런처  
+> vuln : 진단 스크립트 파일  
+> action : 조치 스크립트 파일  
 
-<br/><br/>
+<br/>
 
-# socket_client_test.py
+**실행방법**  
+
+> 1. Vuln_Test.ps1이 있는 경로에서 실행(1차 점검)  
+>     - 실행 시 인자를 번호로 붙이면(ex. 1,2,3,...) 해당 번호의 항목들만 점검, 아니면 전체 항목을 점검
+> 2. 1차 점검을 마치고 자동으로 조치할 항목들을 입력 (ex. 1,3,5,...)
+>    - 자동 조치할 항목이 없으면 엔터를 누르고 생략
+> 3. 2차 점검 진행
+> 4. 1차 점검 결과는 check_output.json, 2차 점검 결과는 check_output2.json에 저장
+
+---
+### 원격 관리 프로그램
+
+파일 및 명령어를 원격으로 전송해 점검 스크립트를 원격으로 전송하고 실행하도록 설계
+
+**socket_client_test.py**  
 socket 통신용 client측 실행 코드
 
-
-<br/><br/>
-
-# socket_server.py
+**socket_server.py**  
 socket 통신용 server측 실행 코드
 
+<br/>
 
-<br/><br/>
+**실행방법**  
+
+> 메인
+>> 1. socket_server.py를 관리자 측에서 실행
+>> 2. socket_client_test.py를 점검 대상에서 실행
+>>     - 통신할 관리자 서버의 ip와 임의의 id 입력(구별 용도)
+>> ---
+> 파일 전송  
+>> 1. server에서 2번을 누르고 통신할 대상 선택
+>> 2. server에서 전송할 파일의 경로 입력(ex. C://test//Window_Test_1)
+>> 3. 파일을 압축 후 전송
+>> 4. client에서 압축된 파일을 받고 압축 해제
+>> ---
+> 명령어 전송
+>> 1. server에서 3번을 누르고 통신할 대상 선택
+>> 2. server에서 전송할 명령어 입력 (ex. powershell -Command ".\Vuln_Test.ps1")
+>> 3. client에서 전달받은 명령어를 수행
+>> 4. 명령어 수행 결과를 server에게 전달
+>> ---
+
+---
